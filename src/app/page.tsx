@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -17,6 +17,7 @@ interface FormData {
 
 export default function EarlyAccessPage() {
   const [formState, setFormState] = useState<FormState>('idle');
+  const [showOverview, setShowOverview] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -268,6 +269,16 @@ export default function EarlyAccessPage() {
         </div>
       </section>
 
+      {/* Overview Link */}
+      <div className="max-w-2xl mx-auto px-6 mb-6 text-center">
+        <button
+          onClick={() => setShowOverview(true)}
+          className="text-slate-400 text-sm hover:text-slate-300 underline underline-offset-2 transition-colors"
+        >
+          Not sure if this is for you? → Read a one-page overview
+        </button>
+      </div>
+
       {/* Application Form */}
       <section className="max-w-2xl mx-auto px-6 pb-24">
         <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-8">
@@ -432,6 +443,107 @@ export default function EarlyAccessPage() {
           <p className="mt-1">A governance-grade decision system where authority is defined, sealed, and verified before execution.</p>
         </div>
       </footer>
+
+      {/* Overview Modal */}
+      {showOverview && (
+        <div 
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setShowOverview(false);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') setShowOverview(false);
+          }}
+        >
+          <div className="bg-white text-slate-900 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-white border-b border-slate-200 p-6 flex justify-between items-start">
+              <div>
+                <h2 className="text-xl font-bold">Invite-Only Governance Testing</h2>
+                <p className="text-slate-500 text-sm mt-1">A 1-minute overview</p>
+              </div>
+              <button 
+                onClick={() => setShowOverview(false)}
+                className="text-slate-400 hover:text-slate-600 text-2xl leading-none"
+              >
+                ×
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-6 space-y-6 text-sm">
+              {/* Section 1 */}
+              <div>
+                <h3 className="font-semibold text-slate-900 mb-2">What This Is</h3>
+                <p className="text-slate-600 mb-3">
+                  Invite-Only Governance Testing is a structured evaluation program for teams that need to 
+                  prove—rather than assume—that their automated decisions operate within clearly defined 
+                  authority boundaries.
+                </p>
+                <p className="text-slate-600 mb-2">You will evaluate a governance-grade decision system where:</p>
+                <ul className="text-slate-600 space-y-1 ml-4">
+                  <li>• authority is defined before execution</li>
+                  <li>• boundaries are sealed, hashed, and verified</li>
+                  <li>• refusals and escalations are first-class outcomes</li>
+                  <li>• deterministic replay is possible under audit</li>
+                </ul>
+                <p className="text-slate-500 text-xs mt-3 italic">This is not a beta or feature trial.</p>
+              </div>
+
+              {/* Section 2 */}
+              <div>
+                <h3 className="font-semibold text-slate-900 mb-2">Who This Is For</h3>
+                <p className="text-slate-600 mb-2">This is a fit if your team:</p>
+                <ul className="text-slate-600 space-y-1 ml-4">
+                  <li>• owns decision logic with compliance or safety implications</li>
+                  <li>• needs provable refusal and escalation semantics</li>
+                  <li>• is replacing heuristic or ad-hoc automation</li>
+                  <li>• requires auditability, not just logs</li>
+                </ul>
+              </div>
+
+              {/* Section 3 */}
+              <div>
+                <h3 className="font-semibold text-slate-900 mb-2">Who This Is Not For</h3>
+                <p className="text-slate-600 mb-2">This is not a fit if you&apos;re looking for:</p>
+                <ul className="text-slate-600 space-y-1 ml-4">
+                  <li>• feature access or roadmap influence</li>
+                  <li>• UX or growth experimentation</li>
+                  <li>• fast tuning or flexible prompt-driven behavior</li>
+                </ul>
+              </div>
+
+              {/* Section 4 */}
+              <div>
+                <h3 className="font-semibold text-slate-900 mb-2">What You&apos;ll Get If Approved</h3>
+                <p className="text-slate-600 mb-2">If approved, you&apos;ll receive:</p>
+                <ul className="text-slate-600 space-y-1 ml-4">
+                  <li>• access to a read-only evaluation environment</li>
+                  <li>• a fixed, non-customizable testing guide</li>
+                  <li>• a governance summary of refusal behavior, boundary friction, and edge cases uncovered</li>
+                </ul>
+                <p className="text-slate-500 text-xs mt-3 italic">No PII. Synthetic data only.</p>
+              </div>
+            </div>
+
+            {/* Modal Actions */}
+            <div className="sticky bottom-0 bg-white border-t border-slate-200 p-4 flex justify-end gap-3">
+              <button
+                onClick={() => setShowOverview(false)}
+                className="px-4 py-2 text-slate-600 hover:text-slate-800 text-sm"
+              >
+                Close
+              </button>
+              <button
+                onClick={() => setShowOverview(false)}
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium"
+              >
+                → Continue to Application
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
