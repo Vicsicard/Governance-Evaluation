@@ -65,26 +65,60 @@ export default function EarlyAccessPage() {
   if (formState === 'success') {
     return (
       <main className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white">
-        <div className="max-w-2xl mx-auto px-6 py-24 text-center">
-          <div className="mb-8">
+        <div className="max-w-2xl mx-auto px-6 py-24">
+          <div className="text-center mb-8">
             <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
               <svg className="w-10 h-10 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h1 className="text-3xl font-bold mb-4">Request Received</h1>
-            <p className="text-slate-300 text-lg">
-              Thank you for your interest in DDR Early Governance Testing.
+            <h1 className="text-3xl font-bold mb-4">Application Received</h1>
+            <p className="text-slate-300 text-lg mb-2">
+              Thank you for applying to participate in Invite-Only Governance Testing.
+            </p>
+            <p className="text-slate-400 text-sm">
+              Your submission has been received and will be reviewed for governance fit.
             </p>
           </div>
-          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6 text-left">
-            <h2 className="font-semibold mb-3">What happens next:</h2>
-            <ol className="space-y-2 text-slate-300 text-sm">
-              <li>1. We review your application within 48 hours</li>
-              <li>2. If approved, you&apos;ll receive access credentials via email</li>
-              <li>3. You&apos;ll get a structured testing guide with specific tasks</li>
-              <li>4. We&apos;ll schedule a brief onboarding call if needed</li>
-            </ol>
+
+          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6 mb-6">
+            <h2 className="font-semibold mb-4 text-center">What Happens Next</h2>
+            <div className="space-y-4 text-sm">
+              <div>
+                <h3 className="font-medium text-blue-300 mb-1">Application Review</h3>
+                <p className="text-slate-400">We review submissions within 48 hours to ensure alignment with governance evaluation goals.</p>
+              </div>
+              <div>
+                <h3 className="font-medium text-blue-300 mb-1">Approval Notification</h3>
+                <p className="text-slate-400">If approved, you&apos;ll receive access credentials and next steps via email.</p>
+              </div>
+              <div>
+                <h3 className="font-medium text-blue-300 mb-1">Structured Evaluation Materials</h3>
+                <p className="text-slate-400">You&apos;ll be provided with a fixed testing guide outlining required governance evaluation tasks.</p>
+              </div>
+              <div>
+                <h3 className="font-medium text-blue-300 mb-1">Optional Orientation</h3>
+                <p className="text-slate-400">If needed, we may schedule a brief onboarding call to clarify scope, expectations, and constraints.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-slate-800/30 border border-slate-700/50 rounded-lg p-4 mb-8">
+            <h3 className="font-medium text-sm mb-2 text-center">Important Notes</h3>
+            <ul className="text-slate-400 text-xs space-y-1 text-center">
+              <li>This is not a production environment</li>
+              <li>No PII or sensitive data is required</li>
+              <li>Evaluation scope is read-only and non-customizable</li>
+            </ul>
+          </div>
+
+          <p className="text-slate-500 text-sm text-center mb-6">
+            We appreciate your interest in disciplined, provable decision governance.
+          </p>
+
+          <div className="text-center text-slate-600 text-xs">
+            <p>DDR — Deterministic Decision Runtime</p>
+            <p className="mt-1">A governance-grade decision system where authority is defined, sealed, and verified before execution.</p>
           </div>
         </div>
       </main>
