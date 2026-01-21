@@ -104,9 +104,12 @@ export default function EarlyAccessPage() {
             Test a Decision System That<br />
             <span className="text-blue-400">Proves Authority Before Execution</span>
           </h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            We&apos;re inviting teams to test a governed decision system where automation 
-            boundaries are defined, sealed, and enforced — not hoped for.
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-4">
+            Evaluate a governance-grade decision system where authority is defined, sealed, 
+            hashed, and verified before execution begins.
+          </p>
+          <p className="text-sm text-slate-400 max-w-xl mx-auto">
+            This is not a beta. It is a structured governance evaluation.
           </p>
         </div>
 
@@ -120,11 +123,11 @@ export default function EarlyAccessPage() {
               This IS
             </h3>
             <ul className="space-y-2 text-slate-300 text-sm">
-              <li>• Decision-quality testing under real conditions</li>
-              <li>• Governance validation with structured tasks</li>
-              <li>• Integration sanity checks</li>
-              <li>• Evidence collection for edge cases</li>
-              <li>• Proving discipline under pressure</li>
+              <li>• Decision-quality testing under real operational conditions</li>
+              <li>• Governance validation through predefined, structured tasks</li>
+              <li>• Boundary enforcement and refusal behavior testing</li>
+              <li>• Evidence sufficiency and edge-case evaluation</li>
+              <li>• Proving decision discipline under pressure</li>
             </ul>
           </div>
           <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
@@ -135,37 +138,41 @@ export default function EarlyAccessPage() {
               This is NOT
             </h3>
             <ul className="space-y-2 text-slate-300 text-sm">
-              <li>• Feature beta testing</li>
-              <li>• UX optimization feedback</li>
-              <li>• Growth experimentation</li>
-              <li>• Free-form AI exploration</li>
-              <li>• Quick-win automation</li>
+              <li>• Feature beta testing or roadmap feedback</li>
+              <li>• UX, UI, or conversion optimization</li>
+              <li>• Growth experiments or performance tuning</li>
+              <li>• Prompt-driven or free-form AI exploration</li>
+              <li>• Shortcut automation or &quot;quick wins&quot;</li>
             </ul>
           </div>
         </div>
 
         {/* What You'll Test */}
         <div className="bg-slate-800/30 border border-slate-700 rounded-lg p-8 mb-16">
-          <h2 className="text-2xl font-bold mb-6 text-center">What You&apos;ll Be Asked To Do</h2>
+          <h2 className="text-2xl font-bold mb-2 text-center">What You&apos;ll Be Asked To Do</h2>
+          <p className="text-slate-400 text-sm text-center mb-6">
+            Participants complete a non-customizable set of governance evaluation tasks designed to stress authority boundaries — not features.
+          </p>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold text-blue-300 mb-3">Structured Tasks</h4>
               <ul className="space-y-2 text-slate-300 text-sm">
-                <li>→ Define a decision that should NOT be automated</li>
-                <li>→ Push the system into edge cases</li>
-                <li>→ Attempt to override a refusal</li>
-                <li>→ Replay a decision under changed conditions</li>
-                <li>→ Upgrade runtime without re-finalizing contracts</li>
+                <li>→ Define a decision that must never be automated</li>
+                <li>→ Push the system into ambiguous and adversarial edge cases</li>
+                <li>→ Attempt to override a refusal outcome</li>
+                <li>→ Replay the same decision with altered inputs or evidence</li>
+                <li>→ Upgrade the runtime without changing contract hashes</li>
+                <li>→ Attempt to execute a decision with a mismatched contract hash</li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold text-blue-300 mb-3">Governance Feedback We Request</h4>
               <ul className="space-y-2 text-slate-300 text-sm">
-                <li>→ Where the system refused (and why)</li>
-                <li>→ Where friction occurred</li>
-                <li>→ Where discipline felt uncomfortable</li>
-                <li>→ Where governance helped or hindered</li>
-                <li>→ Edge cases we didn&apos;t anticipate</li>
+                <li>→ Where and why the system refused to act</li>
+                <li>→ Where authority boundaries created friction</li>
+                <li>→ Where discipline felt uncomfortable — but correct</li>
+                <li>→ Where governance meaningfully reduced risk</li>
+                <li>→ Edge cases or decision states we did not anticipate</li>
               </ul>
             </div>
           </div>
@@ -174,10 +181,10 @@ export default function EarlyAccessPage() {
         {/* Guarantees */}
         <div className="grid md:grid-cols-4 gap-4 mb-12">
           {[
-            { icon: '🔒', title: 'No PII Required', desc: 'Test with synthetic data' },
-            { icon: '📖', title: 'Read-Only Observability', desc: 'No dashboards, no tuning' },
-            { icon: '🔄', title: 'Deterministic Replay', desc: 'Every decision is provable' },
-            { icon: '🛡️', title: 'Authority Sealed', desc: 'You cannot expand scope' },
+            { icon: '🔒', title: 'No PII Required', desc: 'Test exclusively with synthetic or non-sensitive data' },
+            { icon: '📖', title: 'Read-Only Observability', desc: 'No dashboards, tuning, or live policy edits' },
+            { icon: '🔄', title: 'Deterministic Replay', desc: 'Every decision is provable via contract hash verification and replayable inputs' },
+            { icon: '🛡️', title: 'Authority Sealed', desc: 'Decision authority is immutable once runtime begins' },
           ].map((item, i) => (
             <div key={i} className="bg-slate-800/30 border border-slate-700 rounded-lg p-4 text-center">
               <div className="text-2xl mb-2">{item.icon}</div>
@@ -191,7 +198,7 @@ export default function EarlyAccessPage() {
         <div className="bg-slate-800/20 border border-slate-700/50 rounded-lg p-4 mb-12 text-center">
           <p className="text-slate-400 text-sm">
             <span className="text-slate-300 font-medium">Data Ownership:</span> All test data remains client-owned. 
-            We do not retain or repurpose decision content beyond aggregated governance metrics.
+            We do not retain decision content, evidence, or inputs beyond aggregated, non-identifying governance metrics.
           </p>
         </div>
 
@@ -209,7 +216,7 @@ export default function EarlyAccessPage() {
             </div>
             <div className="flex items-start gap-3">
               <span className="text-blue-400 mt-0.5">→</span>
-              <span>Organizations needing provable refusal and escalation semantics</span>
+              <span>Organizations requiring provable refusal and escalation semantics</span>
             </div>
             <div className="flex items-start gap-3">
               <span className="text-blue-400 mt-0.5">→</span>
@@ -231,8 +238,12 @@ export default function EarlyAccessPage() {
       <section className="max-w-2xl mx-auto px-6 pb-24">
         <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-8">
           <h2 className="text-2xl font-bold mb-2 text-center">Apply for Governance Testing Access</h2>
-          <p className="text-slate-400 text-center mb-8 text-sm">
-            Access is reviewed to ensure alignment with governance testing goals. Not all applications are approved.
+          <p className="text-slate-400 text-center mb-2 text-sm">
+            Access is reviewed for alignment with governance evaluation goals.
+            This program is limited and not all applications are approved.
+          </p>
+          <p className="text-slate-500 text-center mb-8 text-xs">
+            These questions help us assess governance fit — not sales qualification.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -298,7 +309,7 @@ export default function EarlyAccessPage() {
 
             <div>
               <label className="block text-sm font-medium mb-2">
-                What decision would you want to govern? *
+                What decision in your system requires explicit governance boundaries? *
               </label>
               <textarea
                 name="useCase"
@@ -307,7 +318,7 @@ export default function EarlyAccessPage() {
                 onChange={handleChange}
                 rows={3}
                 className="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none resize-none"
-                placeholder="Describe a decision your system makes that needs governance boundaries..."
+                placeholder="Describe the risks, constraints, or failure modes that make this decision governance-sensitive..."
               />
             </div>
 
@@ -373,8 +384,8 @@ export default function EarlyAccessPage() {
             </button>
 
             <p className="text-xs text-slate-500 text-center">
-              By submitting, you agree to participate in structured governance evaluation. 
-              No production claims. No PII required. Client-owned data. Read-only observability.
+              By submitting, you agree to participate in a structured governance evaluation. 
+              No production claims. No PII. Client-owned data. Read-only observability.
             </p>
           </form>
         </div>
@@ -384,7 +395,7 @@ export default function EarlyAccessPage() {
       <footer className="border-t border-slate-800 py-8">
         <div className="max-w-4xl mx-auto px-6 text-center text-slate-500 text-sm">
           <p>DDR — Deterministic Decision Runtime</p>
-          <p className="mt-1">A governance-grade decision system where authority is defined before execution.</p>
+          <p className="mt-1">A governance-grade decision system where authority is defined, sealed, and verified before execution.</p>
         </div>
       </footer>
     </main>
